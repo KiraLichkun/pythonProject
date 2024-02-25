@@ -17,7 +17,7 @@ def hash(s):  # Функция хэширования
 students_with_hash = []
 with open('students.csv', encoding='utf-8') as f:
     reader = list(csv.DictReader(f, delimiter=','))   # Создаём объект для чтения файла
-    for row in reader:  # Считываем данные из файла
+    for row in reader:
         row['id'] = hash(row['Name'])
         students_with_hash.append(row)
 with open('student+_with_hash.csv', 'w', encoding='utf-8') as f:  # Сохраняем данные в новый файл
